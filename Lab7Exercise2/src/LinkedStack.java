@@ -54,11 +54,23 @@ public class LinkedStack {
 		return str;
 	}
 	public int removeBottomHalf() {
-		
-		int location = Stack.size()/2;
+		LinkedStack temp = new LinekedStack();
+		int location = this.size()/2;
 		for (int i = location; i < size -1; i++) {
-			Stack.pop();
+			int tempInt = this.pop();
+			temp.push(tempInt);
+			
 		}
+		while(!this.isEmpty()) {
+			this.pop();
+			
+		}
+		
+		for (int i =0; i < temp.size(); i++) {
+				int tempInt = temp.pop();
+				this.push(tempInt);
+		}
+			
 		
 		
 		
